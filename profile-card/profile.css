@@ -1,0 +1,86 @@
+body {
+    background-image: url(/profile-card/sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    background-color: rgba(225, 255, 255, 0.5);
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(5px);
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    height: 500px;
+    width: 350px;
+    grid-template-rows: 150px 2fr 1fr;
+}
+
+.card-header {
+    background-image: url(/profile-card/stone.jpg);
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-img {
+    margin-top: -50px;
+    height: 100px;
+    width: 100px;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%;
+    background-image: url(/profile-card/MS\ Dhoni.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.middle .content {
+    padding-left: 20px;
+}
+
+.middle .content-bottom {
+    padding: 30px;
+    padding-top: 0px;
+    font-weight: bolder;
+}
+
+
+
+.bottom button {
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}

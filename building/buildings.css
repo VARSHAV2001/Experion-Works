@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+}
+
+.parent {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.head {
+    margin: 0;
+    background-color: rgb(58, 249, 58);
+    height: 80vh;
+    width: 100vw;
+}
+
+.block1 {
+    margin-top: 210px;
+    height: 45vh;
+    width: 20vw;
+    background-color: white;
+    display: grid;
+    justify-content: space-around;
+}
+
+.class1 {
+    display: grid;
+    height: 80px;
+    width: 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    margin-top: 20px;
+    margin-left: 7px;
+}
+
+.child {
+    display: grid;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class2 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class3 {
+    display: grid;
+    height: 80px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.block2 {
+    position: absolute;
+    top: -3px;
+    left: 150px;
+    margin-left: 180px;
+    margin-top: 60px;
+    height: 70vh;
+    width: 20vw;
+    background-color: white;
+    display: grid;
+    justify-content: space-around;
+}
+
+.class4 {
+    display: grid;
+    height: 60px;
+    width: 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    margin-top: 20px;
+    margin-left: 7px;
+}
+
+.class5 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class6 {
+    display: grid;
+    height: 10px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.class7 {
+    display: grid;
+    height: 70px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.class8 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class9 {
+    display: grid;
+    height: 150px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.block3 {
+    position: absolute;
+    top: -3px;
+    left: 500px;
+    margin-left: 180px;
+    margin-top: 60px;
+    height: 70vh;
+    width: 20vw;
+    background-color: white;
+    display: grid;
+    justify-content: space-around;
+}
+
+.class10 {
+    display: grid;
+    height: 60px;
+    width: 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    margin-top: 20px;
+    margin-left: 7px;
+}
+
+.class11 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class12 {
+    display: grid;
+    height: 10px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.class13 {
+    display: grid;
+    height: 70px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.class14 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.class15 {
+    display: grid;
+    height: 150px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.block4 {
+    position: absolute;
+    top: -2px;
+    left: 1000px;
+    margin-top: 210px;
+    height: 45vh;
+    width: 20vw;
+    background-color: white;
+    display: grid;
+    justify-content: space-around;
+}
+
+.class16 {
+    display: grid;
+    height: 80px;
+    width: 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    margin-top: 20px;
+    margin-left: 7px;
+}
+
+.class17 {
+    display: grid;
+    height: 25px;
+    width: 15vw;
+    background-color: rgb(58, 249, 58);
+    padding: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 10px;
+}
+
+.class18 {
+    display: grid;
+    height: 80px;
+    width: 15vw;
+    padding: 5px;
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}
+
+.footer {
+    height: 20vh;
+    width: 100vw;
+    background-color: aqua;
+}

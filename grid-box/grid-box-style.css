@@ -1,0 +1,36 @@
+* {
+   margin: 0;
+}
+
+.parent {
+   padding-left: 20px;
+   background-color: rgb(127, 225, 255);
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+}
+
+.child {
+   height: 120px;
+   display: flex;
+   justify-content: space-around;
+   color: white;
+   margin-bottom: 80px;
+}
+
+.content {
+   background-color: rgb(59, 220, 245);
+   width: 100px;
+   height: 80px;
+   display: flex;
+   margin: 80px;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   color: white;
+   font-size: 30px;
+}
