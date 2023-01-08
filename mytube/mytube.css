@@ -39,7 +39,6 @@ nav h1 {
 }
 
 .main {
-    /* gap: 1px; */
     grid-template-columns: repeat(4, .3fr);
     padding: 0px 0px 0px 25px;
 }
