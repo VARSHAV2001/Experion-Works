@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Date of Birth</label>
+    <input type="date" id="date" name="date">
+    <button id="onclick" value="age" onclick="age()">Age</button>
+    <button id="onclick" value="leap" onclick="leapyn()">Leap Year or Not</button>
+    <p id="disage"></p>
+    <p id="leap"></p>
+    <script>
+        
+        function leapyn() {
+            var dob = document.getElementById('date').value;
+            var newdate = new Date(dob);
+            var year = newdate.getFullYear();
+            console.log(year);
+            if (year % 400 == 0) {
+                document.getElementById('leap').innerHTML = (year + ' is leap year');
+            }
+            else if (year % 100 != 0) {
+                document.getElementById('leap').innerHTML = (year + ' is not leap year');
+            }
+            else if (year % 4 == 0) {
+                document.getElementById('leap').innerHTML = (year + ' is leap year');
+            }
+            else {
+                document.getElementById('leap').innerHTML = (year + ' is not leap year');
+            }
+        }
+
+        function age() {
+            var date = document.getElementById('date').value;
+            var tdate = new Date();
+            var ndate = new Date(date);
+            var diff = tdate.getTime() - ndate.getTime();
+            var yer = new Date(diff);
+            var yr = yer.getYear() - 70;
+            let month = yr * 12;
+            let week = month * 5;
+            let days = week * 7;
+            let hours = days * 24;
+            document.getElementById('disage').innerHTML = (`age is  ${yr} in years,
+            ${month} in months,
+            ${week} in weeks,
+            ${days} in days and
+            ${hours} in hours`);
+
+            console.log(yr);
+
+        }
+
+    </script>
+</body>
+
+</html>

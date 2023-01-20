@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="array" id="array">
+    <button id="onclick" value="add" onclick="add(event)">Add Fare</button>
+    <p id="data"></p>
+    <p id="even"></p>
+    <p id="odd"></p>
+    <script>
+        let array = [];
+        function add() {
+            const fare = parseFloat(document.getElementById('array').value);
+            array.push(fare);
+            console.log(array);
+            document.getElementById('data').innerHTML = `The flight fare is: ${array}`;
+
+            let input_array = []
+            for (let i = 0; i < array.length; i++) {
+                if (i % 2 == 0) {
+                    input_array[i] = array[i]
+                }
+                else {
+                    input_array[i] = 0;
+                }
+            }
+            console.log(input_array);
+            document.getElementById('even').innerHTML = `The flight fare in the even position: ${input_array}`;
+
+            for (let i = 0; i < array.length; i++) {
+                if (i % 2 != 0) {
+                    input_array[i] = array[i];
+                }
+                else {
+                    input_array[i] = 0;
+                }
+            }
+            console.log(input_array);
+            document.getElementById('odd').innerHTML = `The flight fare in the odd position: ${input_array}`;
+        }
+    </script>
+</body>
+
+</html>

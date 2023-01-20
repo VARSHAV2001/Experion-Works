@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="handleSumbit(event)">
+        <input type="text" id="fare" placeholder="Flight fare">
+        <label for="time">Booking Time:</label>
+        <input type="time" id="time">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="total"></p>
+
+    <script>
+
+        function handleSumbit(e) {
+            var fare = document.getElementById('fare').value;
+            var time = document.getElementById('time').value;
+            e.preventDefault();
+            var hour = time.split(":");
+            if (hour[0] >= 6 && hour[0] <= 9) {
+                var flight_fare = (parseInt(fare) * (10 / 100)) + parseInt(fare);
+                console.log(flight_fare);
+                document.getElementById('total').innerText = `Total fare: ${flight_fare}`;
+            }
+            else if (hour[0] >= 9 && hour[0] <= 17) {
+                var flight_fare = (parseInt(fare) * (20 / 100)) + parseInt(fare);
+                console.log(flight_fare);
+                document.getElementById('total').innerText = `Total fare: ${flight_fare}`;
+            }
+            else if (hour[0] >= 17 && hour[0] <= 23) {
+                var flight_fare = (parseInt(fare) * (7 / 100)) + parseInt(fare);
+                console.log(flight_fare);
+                document.getElementById('total').innerText = `Total fare: ${flight_fare}`;
+            }
+            else if (hour[0] >= 23 && hour[0] <= 6) {
+                var flight_fare = (parseInt(fare) * (5 / 100)) + parseInt(fare);
+                console.log(flight_fare);
+                document.getElementById('total').innerText = `Total fare: ${flight_fare}`;
+            }
+            else {
+                document.getElementById('total').innerText = `Total fare: ${fare}`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

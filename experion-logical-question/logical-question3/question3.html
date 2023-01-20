@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button type="button" id="ascending" onclick="ascendingOrder(event)">Ascending Order</button>
+    <button type="button" id="descending" onclick="descendingOrder(event)">Descending Order</button>
+    <button type="button" id="fare" onclick="inputFare(event)">Input Fare</button>
+    <button type="button" id="minmax" onclick="minMax(event)">Max and Min Fare</button>
+    <button type="button" id="duplicate" onclick="duplicateFare(event)">Duplicate Fare</button>
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Flight Fare</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <p id="min"></p>
+    <p id="max"></p>
+
+
+    <p id="dup"></p>
+    <script>
+        var flight_fare = [
+            15000,
+            25000,
+            20000,
+            30000,
+            17500,
+            25000,
+            35000,
+            22500,
+            35000,
+            22500
+        ];
+
+        let pass = ``
+
+        // ------------------------------------------------------------------------------------------------------------
+        function ascendingOrder(e) {
+            for (let i = 0; i < flight_fare.length; i++) {
+                for (let j = i + 1; j < flight_fare.length; j++) {
+                    if (flight_fare[i] > flight_fare[j]) {
+                        let temp = flight_fare[i];
+                        flight_fare[i] = flight_fare[j];
+                        flight_fare[j] = temp;
+                    }
+                }
+            }
+
+            for (let i = 0; i < flight_fare.length; i++) {
+                pass = pass + `<tr>
+                <td>${i + 1}</td>
+                <td>${flight_fare[i]}</td>
+                </tr>`
+            }
+
+            document.querySelector('tbody').innerHTML = pass;
+        }
+
+        // ----------------------------------------------------------------------------------
+
+        function descendingOrder(e) {
+            for (let i = 0; i < flight_fare.length; i++) {
+                for (let j = i + 1; j < flight_fare.length; j++) {
+                    if (flight_fare[i] < flight_fare[j]) {
+                        let temp = flight_fare[i];
+                        flight_fare[i] = flight_fare[j];
+                        flight_fare[j] = temp;
+                    }
+                }
+            }
+
+            for (let i = 0; i < flight_fare.length; i++) {
+                pass = pass + `<tr>
+                <td>${i + 1}</td>
+                <td>${flight_fare[i]}</td>
+                </tr>`
+            }
+
+            document.querySelector('tbody').innerHTML = pass;
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+        function inputFare(e) {
+            let temp = 0;
+            let rno = 1;
+
+            let user = prompt('Enter the flight fare to be search:');
+
+            for (let i = 0; i < flight_fare.length; i++) {
+                if (flight_fare[i] == user) {
+                    temp = 1;
+                    rno++;
+                }
+            }
+
+            if (temp == 1) {
+                document.write(`The flight fare is found at position ` + rno);
+            } else {
+                document.write('The flight fare is not found');
+            }
+        }
+
+
+        // ----------------------------------------------------------------------------------------
+        function minMax(e) {
+
+            minValue = Math.min(...flight_fare);
+            maxValue = Math.max(...flight_fare);
+
+            document.getElementById('min').textContent = 'The Minimum value is:' + minValue;
+            document.getElementById('max').textContent = 'The Maximum value is:' + maxValue;
+        }
+
+        // ------------------------------------------------------------------------------------------------
+
+        function duplicateFare(e) {
+            let length = flight_fare.length;
+
+            for (let i = 0; i < length; i++) {
+                for (let j = i + 1; j < length; j++) {
+                    if (flight_fare[i] == flight_fare[j]) {
+                        //console.log(flight_fare[i])
+                        document.getElementById('dup').textContent = 'The duplicate value is:' + flight_fare[i];
+                    }
+
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

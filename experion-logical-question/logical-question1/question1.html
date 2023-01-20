@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: blue;
+            font-style: oblique;
+        }
+
+        button {
+            background-color: rgba(0, 0, 255, 0.505);
+            border-radius: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Passenger</h1>
+
+    <button type="button" id="alpha" onclick="alphabeticOrder(event)">Alphabetic Order</button>
+    <button type="button" id="reverse" onclick="reverseOrder(event)">Reverse Order</button>
+    <button type="button" id="search" onclick="inputSearch(event)">Input a name and Search</button>
+    <button type="button" id="length" onclick="nameLength(event)">Length of name</button>
+    <button type="button" id="split" onclick="nameSplit(event)">split the name</button>
+    <button type="button" id="duplicate" onclick="nameDuplicate(event)">Duplicate Entries</button>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>PassengerName</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+
+        let passenger = [
+            "Varsha V",
+            "Kavitha BS",
+            "Fathima Sulthana",
+            "Surabhi SM",
+            "Vijitha P",
+            "Sivapriya VB",
+            "Akshaya S",
+            "Nimisha ER",
+            "Donamol Joychan",
+            "Reethu Ravi",
+            "Reethu Ravi"
+
+
+        ];
+
+        let passenger_data = ``
+        // ---------------------------------------------------------------------------------------
+        function alphabeticOrder(e) {
+
+            for (let i = 0; i < passenger.length; i++) {
+                for (let j = i + 1; j < passenger.length; j++) {
+                    if (passenger[i] > passenger[j]) {
+                        let temp = passenger[i];
+                        passenger[i] = passenger[j];
+                        passenger[j] = temp;
+                    }
+                }
+            }
+
+            for (let i = 0; i < passenger.length; i++) {
+                passenger_data += `<tr>
+                <td>${i + 1}</td>
+                <td>${passenger[i]}</td>
+                </tr>`
+            }
+
+            document.querySelector('tbody').innerHTML = passenger_data;
+        }
+
+        //----------------------------------------------------------------------------------------
+
+        function reverseOrder(e) {
+            for (let i = 0; i < passenger.length; i++) {
+                for (let j = 0; j < passenger.length; j++) {
+                    if (passenger[i] > passenger[j]) {
+                        let temp = passenger[i];
+                        passenger[i] = passenger[j];
+                        passenger[j] = temp;
+                    }
+                }
+            }
+
+            for (let i = 0; i < passenger.length; i++) {
+                passenger_data = passenger_data + `<tr>
+                <td>${i + 1}</td>
+                <td>${passenger[i]}</td>
+                </tr>`
+            }
+
+            document.querySelector('tbody').innerHTML = passenger_data;
+        }
+
+        // ----------------------------------------------------------------------------------------------
+
+        function inputSearch(e) {
+            let temp = 0;
+            let rno = 1;
+
+            let user = prompt('Enter the passenger name to be search:');
+
+            for (let i = 0; i < passenger.length; i++) {
+                if (passenger[i] == user) {
+                    temp = 1;
+                    rno = i++;
+                }
+            }
+
+            if (temp == 1) {
+                document.write(`The passenger name is found at position` + rno);
+            } else {
+                document.write('The passenger value is not found');
+            }
+
+        }
+
+        // -----------------------------------------------------------------------------------------------------------
+
+        let length;
+
+        function nameLength(e) {
+            passenger.forEach(name => {
+                length = name.length;
+                document.write(`${name} : ${length}`);
+                document.write(`<br>`);
+
+
+            })
+        }
+
+        // ---------------------------------------------------------------------------------------------------------------
+
+        function nameSplit(e) {
+            splitelement = document.getElementById('selement');
+            passenger.forEach(value => {
+                for (let i = 0; i < value.length; i++) {
+                    if (value[i] == ' ') {
+                        let names = value.split(' ');
+                        console.log(names);
+
+                    }
+
+                }
+            });
+        }
+
+
+        // --------------------------------------------------------------------------------------------------------------------------
+
+        function nameDuplicate(e) {
+            let length = passenger.length;
+
+            for (let i = 0; i < length; i++) {
+                for (let j = i + 1; j < length; j++) {
+                    if (passenger[i] == passenger[j]) {
+                        console.log(passenger[i]);
+
+                    }
+
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
