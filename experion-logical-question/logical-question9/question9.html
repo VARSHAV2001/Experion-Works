@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob">
+    <button onclick="dateofBirth(event)" id="onclick" value="save">Save</button>
+
+    <script>
+        let dob = [];
+        function dateofBirth(e) {
+            const date_of_birth = document.getElementById('dob').value;
+            dob.push(date_of_birth);
+            console.log(dob);
+            var tdate = new Date();
+            var ndate = new Date(dob);
+            var diff = tdate.getTime() - ndate.getTime();
+            var yer = new Date(diff);
+            var age = yer.getYear() - 70;
+            console.log(`Age: ${age}`)
+
+            if (age < 10) {
+                console.log(`Kid`);
+            }
+            else if (age > 10 & age < 30) {
+                console.log(`Youth`);
+            }
+            else if (age > 30 & age < 60) {
+                console.log(`Adult`);
+            }
+            else if (age > 60) {
+                console.log(`Old`);
+            }
+            else {
+                console.log(`Error is found`);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

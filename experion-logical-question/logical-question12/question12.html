@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="pname" placeholder="Passenger Name">
+    <input type="text" id="fdes" placeholder="Flight Destination">
+    <button onclick="flight(event)" id="onclick" value="save">Save</button>
+
+    <script>
+        let passenger_name = [];
+        let destination = [];
+        let details = [];
+        function flight(e) {
+            const name = document.getElementById('pname').value;
+            passenger_name.push(name);
+            console.log(passenger_name);
+            const dest = document.getElementById('fdes').value;
+            destination.push(dest);
+            console.log(destination);
+
+            details.push(name);
+            details.push(dest);
+            console.log(details);
+        }
+    </script>
+</body>
+
+</html>

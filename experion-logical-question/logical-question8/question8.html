@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="fare" placeholder="Flight Fare">
+    <input type="text" id="fdes" placeholder="Flight Destination">
+    <button onclick="flightFare(event)" id="onclick" value="save">Save</button>
+    <input type="text" id="search" placeholder="Position">
+    <button onclick="position(event)" id="onclick">Search</button>
+
+    <script>
+        let flight_fare = [];
+        let destination = [];
+        function flightFare(e) {
+            const fare = parseFloat(document.getElementById('fare').value);
+            flight_fare.push(fare);
+            console.log(flight_fare);
+            const dest = document.getElementById('fdes').value;
+            destination.push(dest);
+            console.log(destination);
+        }
+        function position(e) {
+            const pos = parseFloat(document.getElementById('search').value);
+            console.log(flight_fare[pos]);
+            console.log(destination[pos]);
+        }
+    </script>
+</body>
+
+</html>

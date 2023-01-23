@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="pname" placeholder="Passenger Name">
+    <input type="text" id="pflight" placeholder="Total miles travelled">
+    <button onclick="passengerName(event)" id="onclick" value="save">Save</button>
+
+    <script>
+        let passenger_name = [];
+        let total_miles = [];
+        function passengerName(e) {
+            const pname = document.getElementById('pname').value;
+            passenger_name.push(pname);
+            console.log(passenger_name);
+
+            const miles = parseFloat(document.getElementById('pflight').value);
+            total_miles.push(miles);
+            console.log(total_miles);
+
+            for (let i = 0; i < 10; i++) {
+                if (total_miles > 10000 & total_miles < 20000) {
+                    console.log(`You won 10 frequent flyer points`);
+                } else if (total_miles > 20000 & total_miles < 50000) {
+                    console.log(`You won 20 frequent flyer points`);
+                } else if (total_miles > 50000 & total_miles < 100000) {
+                    console.log(`You won 30 frequent flyer points`);
+                } else if (total_miles > 100000) {
+                    console.log(`You won 50 frequent flyer points`);
+                }
+                else {
+                    console.log(`No data available`);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
