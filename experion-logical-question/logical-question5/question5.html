@@ -12,38 +12,20 @@
     <input type="text" name="array" id="array">
     <button id="onclick" value="add" onclick="add(event)">Add Fare</button>
     <p id="data"></p>
-    <p id="even"></p>
-    <p id="odd"></p>
     <script>
         let array = [];
+        let odd = 1;
+        let even = 0;
         function add() {
             const fare = parseFloat(document.getElementById('array').value);
-            array.push(fare);
-            console.log(array);
+            if(fare % 2 == 0){
+                array[even] = fare;
+                even = even + 2;
+            }else{
+                array[odd] = fare;
+                odd = odd + 2;
+            }
             document.getElementById('data').innerHTML = `The flight fare is: ${array}`;
-
-            let input_array = []
-            for (let i = 0; i < array.length; i++) {
-                if (i % 2 == 0) {
-                    input_array[i] = array[i]
-                }
-                else {
-                    input_array[i] = 0;
-                }
-            }
-            console.log(input_array);
-            document.getElementById('even').innerHTML = `The flight fare in the even position: ${input_array}`;
-
-            for (let i = 0; i < array.length; i++) {
-                if (i % 2 != 0) {
-                    input_array[i] = array[i];
-                }
-                else {
-                    input_array[i] = 0;
-                }
-            }
-            console.log(input_array);
-            document.getElementById('odd').innerHTML = `The flight fare in the odd position: ${input_array}`;
         }
     </script>
 </body>
