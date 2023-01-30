@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="pname" placeholder="Passenger Name">
+    <input type="text" name="" id="t_weight" placeholder="Enter the Carry Weight">
+    <button type="button" id="button" onclick="totalWeight(event)">Click</button>
+
+    <p id="name"></p>
+    <p id="weight"></p>
+    <p id="total"></p>
+    <p id="message"></p>
+
+    <script>
+
+        let p_name = [];
+        let weight = [];
+        let charge = [];
+        let tab = ``
+
+        function totalWeight(e) {
+            let pass_name = document.getElementById('pname').value;
+            p_name.push(pass_name);
+            console.log(p_name);
+            document.getElementById('name').innerHTML = `Passenger Name : ${p_name}`;
+            let total_weight = parseFloat(document.getElementById('t_weight').value);
+            weight.push(total_weight);
+            console.log(weight);
+            document.getElementById('weight').innerHTML = `Total Weight to carrying passenger : ${weight}`;
+
+            let maxvalue = 23;
+            for (let i = 0; i < p_name.length; i++) {
+                if (weight[i] > maxvalue) {
+                    let total_charge = (15 * (weight[i] - maxvalue));
+                    charge.push(total_charge);
+                    console.log(charge);
+                    document.getElementById('total').innerHTML = `Total fare to pay : ${charge}`;
+                } else {
+                    document.getElementById('message').innerHTML = `No over weight`;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
