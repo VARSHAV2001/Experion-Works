@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <label for="alpha">Select the alphabet and submit</label><br>
+            <select name="alpha" id="alpha">
+                <option value="F">F</option>
+                <option value="W">W</option>
+                <option value="Q">Q</option>
+                <option value="N">N</option>
+                <option value="A">A</option>
+            </select>
+
+        </div>
+        <div><button onclick="showTheRange()">Submit</button></div>
+        <div class="result">
+            <textarea name="t-area" id="tarea" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+<script>
+    // let inputAlpha = document.getElementById(`alpha`).value;
+    // let txtArea = document.getElementById(`tarea`);
+    // txtArea.innerHTML = `Range:`;
+    // let alphaNum = [];
+    // let index = 0;
+    function showTheRange() {
+        let inputAlpha = document.getElementById(`alpha`).value;
+        let txtArea = document.getElementById(`tarea`);
+        txtArea.innerHTML = `Range:`;
+        let alphaNum = [];
+        let index = 0;
+        if (inputAlpha === 'F' || inputAlpha === 'f') {
+            for (value = 100; value <= 110; value++) {
+                if ((value % 2) != 0) {
+                    alphaNum[index] = ` F${value}`;
+                    index++;
+                }
+            }
+            txtArea.innerHTML += alphaNum;
+        }
+        else if (inputAlpha === 'W' || inputAlpha === 'w') {
+            for (value = 100; value <= 110; value++) {
+                if ((value % 2) === 0) {
+                    alphaNum[index] = `W${value}`;
+                    index++;
+                }
+            }
+            console.log(alphaNum);
+            txtArea.innerHTML += alphaNum;
+        }
+        else if (inputAlpha === 'Q' || inputAlpha === 'q') {
+            let counter = 0;
+            let haveDivisor = false;
+            let num = 2;
+            while (counter < 10) {
+                for (let count = 2; count <= num / 2; count++) {
+                    if (num % count === 0) {
+                        haveDivisor = true;
+                        break;
+                    }
+                    else {
+                        haveDivisor = false;
+                    }
+                }
+                if (haveDivisor === false) {
+                    alphaNum[counter] = 'Q' + num;
+                    counter++;
+                }
+                num++;
+            }
+            txtArea.innerHTML += alphaNum;
+        }
+        else if (inputAlpha == `N` || inputAlpha == `n`) {
+            let num1 = 1;
+            let num2 = 1;
+            let counter = 0
+            let fibinaciArray = [1, 1];
+            let pos = 2;
+            while (counter < 8) {
+                let num3 = num1 + num2;
+                fibinaciArray[pos] = num3;
+                pos++;
+                num1 = num2
+                num2 = num3;
+                counter++;
+            }
+            txtArea.innerHTML += fibinaciArray;
+        }
+        else if (inputAlpha == `A` || inputAlpha == `a`) {
+            let num = 1;
+            let counter = 0;
+            while (counter < 5) {
+                let sum = 0;
+                let temp = num;
+                while (num != 0) {
+                    let reminder = Math.floor(num % 10);
+                    sum = sum + (reminder * reminder * reminder);
+                    num = Math.floor(num / 10);
+                }
+                if (sum == temp) {
+                    console.log(`${num} is armstrong`);
+                }
+                num++;
+                counter++;
+            }
+        }
+    }
+
+</script>
+
+</html>
